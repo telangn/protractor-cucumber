@@ -1,0 +1,66 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Assert Google Home Page",
+    "line": 2,
+    "id": "assert-google-home-page",
+    "tags": [
+      {
+        "name": "@run",
+        "line": 1
+      }
+    ],
+    "uri": "features/google.feature",
+    "elements": [
+      {
+        "id": "assert-google-home-page;google-home-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Google Home Page",
+        "tags": [
+          {
+            "name": "@run",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on google page with title 'Google'",
+            "match": {
+              "location": "stepDefinitions/steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "stepDefinitions/hooks.js:10"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

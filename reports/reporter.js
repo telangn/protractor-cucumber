@@ -4,7 +4,7 @@ const path = require('path');
 const options = {
     theme: 'bootstrap',
     jsonFile: path.resolve(__dirname, './json/cucumber_report.json'),
-    output: 'reports/html/cucumber_report.html',
+    output: path.resolve(__dirname, './html/cucumber_report.html'),
     reportSuiteAsScenarios: true,
     launchReport: false,
     screenshotsDirectory: path.resolve(__dirname,'./screenshots/'),

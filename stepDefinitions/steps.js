@@ -7,7 +7,7 @@ const globals = new Globals();
 const expect = globals.expect;
 
 
-Given('I am on google page with title {string}', function (title) {
+Given('I am on web page with title {string}', function (title) {
     return expect(browser.getTitle()).to.eventually.equal(title);
 });
 
@@ -33,11 +33,16 @@ When('I click on element with locator {string}', function (string) {
 When('I scroll to element with locator {string}', function (string) {
     var element = $(string);
     return browser.actions().mouseMove(element).perform();
-  });
+});
 
 Then('element with locator {string} is displayed', function (locator) {
     var element = $(locator);
     var EC = protractor.ExpectedConditions;
     browser.wait(EC.elementToBeClickable(element), 5000);
     return expect($(locator).isDisplayed()).to.eventually.equal(true);
+});
+
+Then('element with locator {string} has text value of {string}', function (locator, string) {
+    var element = $(locator);
+    return expect(element.getText()).to.eventually.equal(string);
 });

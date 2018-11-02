@@ -11,6 +11,17 @@ git clone https://github.com/telangn/protractor-cucumber.git
 
 ### Prerequisites
 
+* [Reporting] (https://github.com/gkushang/cucumber-html-reporter)
+
+```
+npm install cucumber-html-reporter --save-dev
+```
+
+https://github.com/protractor-cucumber-framework/protractor-cucumber-framework
+npm install --save-dev protractor-cucumber-framework
+
+https://github.com/cucumber/cucumber-js
+npm install cucumber
 
 
 ### Installing

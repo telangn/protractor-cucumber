@@ -6,12 +6,12 @@ This is a Cucumber - Protractor Framework
 ## Getting Started
 
 ```
-git clone https://github.com/telangn/cucumber-selenium.git
+git clone https://github.com/telangn/protractor-cucumber.git
 ```
 
 ### Prerequisites
 
-Internet Connectivity
+
 
 ### Installing
 

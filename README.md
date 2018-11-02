@@ -1,5 +1,5 @@
 
-  # Front-End QA Automation - Angular Specific Webpages
+# Front-End QA Automation - Angular Specific Webpages
 
 This is a Cucumber - Protractor Framework
 
@@ -26,10 +26,13 @@ npm install --save-dev protractor-cucumber-framework
 npm install cucumber
 ```
 
-### Installing
-
-
 ## Running the tests
+
+Navigate to the directory containing conf.js
+
+```
+protractor conf.js
+```
 
 
 ## Coding Style / Design Patterns
@@ -42,7 +45,7 @@ This project is ready to deploy on Jenkins.
 
 ## Built With
 
-* [Cucumber](https://cucumber.io/) - Framework
+* [Cucumber](https://cucumber.io/)
 * [Protractor](https://www.protractortest.org/#/)
 
 ## Contributing

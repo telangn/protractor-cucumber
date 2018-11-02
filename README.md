@@ -25,6 +25,14 @@ npm install --save-dev protractor-cucumber-framework
 ```
 npm install cucumber
 ```
+* [Assertion Library](https://github.com/chaijs/chai)
+```
+npm install chai
+```
+* [Assertion Library](https://www.npmjs.com/package/chai-as-promised)
+```
+npm install chai-as-promised
+```
 
 ## Running the tests
 

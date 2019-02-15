@@ -1,6 +1,5 @@
 const Globals = require('../utilities/Globals');
 const { Given, When, Then } = require('cucumber');
-var wait = require('../utilities/waits');
 
 // Chai
 const globals = new Globals();
@@ -11,8 +10,8 @@ Given('I am on web page with title {string}', function (title) {
     return expect(browser.getTitle()).to.eventually.equal(title);
 });
 
-Given('I navigate to page with url {string}', function (string) {
-    return browser.get(string);
+Given('I navigate to page with url {string}', function (url) {
+    return browser.get(url);
 });
 
 When('I perform a google search with text {string}', function (string) {
@@ -20,25 +19,22 @@ When('I perform a google search with text {string}', function (string) {
     return google.executeGoogleSearch(string);
 });
 
-When('I click on element with locator {string}', function (string) {
-    browser.driver.sleep(1000);
-    var element = $(string);
-    if (wait.waitForElementClickable(element, 5000)) {
-        return element.click();
-    } else {
-        throw new Error("Element was not clickable");
-    }
+When('I click on element with locator {string}', function (locator) {
+    var element = $(locator);
+    var EC = protractor.ExpectedConditions;
+    browser.wait(EC.elementToBeClickable(element), 3000);
+    return element.click();
 });
 
-When('I scroll to element with locator {string}', function (string) {
-    var element = $(string);
+When('I scroll to element with locator {string}', function (locator) {
+    var element = $(locator);
     return browser.actions().mouseMove(element).perform();
 });
 
 Then('element with locator {string} is displayed', function (locator) {
     var element = $(locator);
     var EC = protractor.ExpectedConditions;
-    browser.wait(EC.elementToBeClickable(element), 5000);
+    browser.wait(EC.visibilityOf(element), 3000);
     return expect($(locator).isDisplayed()).to.eventually.equal(true);
 });
 

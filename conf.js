@@ -4,30 +4,32 @@ const path = require('path');
 
 exports.config = {
 
-    directConnect: true,
-    baseURL: url.format('https://www.google.com'),
-    framework: 'custom',
-    frameworkPath: require.resolve('protractor-cucumber-framework'),
+	directConnect : true,
+	baseURL : url.format('https://www.google.com'),
+	framework : 'custom',
+	frameworkPath : require.resolve('protractor-cucumber-framework'),
 
-    specs: [
-        './features/*.feature'
-    ],
+	capabilities : {
+		browserName : 'chrome',
+		chromeOptions : {
+			args : [ "--window-size=800,600" ]
+		}
+	},
 
-    cucumberOpts: {
-        require: [
-            './stepDefinitions/steps.js',
-            './stepDefinitions/hooks.js'
-        ],
-        format: 'json:./reports/json/cucumber_report.json',
-        tags: '(@run)'
-    },
+	specs : [ './features/*.feature' ],
 
-    onPrepare: function () {
-        browser.manage().window().maximize();
-        browser.waitForAngularEnabled(false);
-    },
+	cucumberOpts : {
+		require : [ './stepDefinitions/steps.js', './stepDefinitions/hooks.js' ],
+		format : 'json:./reports/json/cucumber_report.json',
+		tags : '(@run)'
+	},
 
-    onComplete: function () {
-        Reporter.createHTMLReport();
-    }
+	onPrepare : function() {
+		browser.manage().window().maximize();
+		browser.waitForAngularEnabled(false);
+	},
+
+	onComplete : function() {
+		Reporter.createHTMLReport();
+	}
 };
